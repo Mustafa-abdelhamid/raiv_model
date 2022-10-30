@@ -1,7 +1,15 @@
+//=====================================================================
+//
+// raiv_config.h                                              Date: 2022/10/29
+//
+// Author : Mustafa abdelhamid
+//=====================================================================
 
 
-
-
+#include <stdio.h>
+#include <stdint.h>
+#include <stdbool.h>
+#include "decoder.h"
 
 void extendSign ( uint16_t signal , uint8_t signalWidth, uint32_t *extendedSignal)  {
 

@@ -19,7 +19,7 @@
 // -------------------------------------------------------------------------
 #include <stdio.h>
 #include <stdint.h>
-#include <raiv_config.h>
+#include "raiv_config.h"
 
 
 #define DEBUG
@@ -89,22 +89,10 @@ typedef struct join_if
 	
 } join_if; 
 
-int main()
-{
-    instr_fetch_rsp fetched_instruction;
-    perf_decode_if decoder_performance; 
-    decode_if decoded_signals; 
-    wstall_if stalled_warps ;
-    join_if join_inst; 
 
-    fetched_instruction.instr = 0x00000002 ;
 
-    decode (fetched_instruction,&decoder_performance,&decoded_signals,&stalled_warps,&join_inst); 
-	return 0;
-}
-
-//============================= FUNCTION ============================================
+//============================= FUNCTIONS ============================================
 void extendSign ( uint16_t signal , uint8_t signalWidth, uint32_t *extendedSignal) ;
 
-void decode (instr_fetch_rsp fetched_instruction, perf_decode_if *decoder_performance, decode_if *decoded_signals , wstall_if *stalled_warps , join_if *join_inst ) 
+void decode (instr_fetch_rsp fetched_instruction, perf_decode_if *decoder_performance, decode_if *decoded_signals , wstall_if *stalled_warps , join_if *join_inst ) ;
 
