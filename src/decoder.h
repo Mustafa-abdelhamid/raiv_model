@@ -64,7 +64,7 @@ typedef struct decode_if
         unsigned wb:1;
         unsigned use_PC:1;
         unsigned use_imm:1;
-        unsigned imm:32;
+        signed  imm:32;
         unsigned rd:6; //6 because of floating point regs 
         unsigned rs1:6;
         unsigned rs2:6;
@@ -92,7 +92,9 @@ typedef struct join_if
 
 
 //============================= FUNCTIONS ============================================
-void extendSign ( uint16_t signal , uint8_t signalWidth, uint32_t *extendedSignal) ;
+char *get_regName(uint16_t regNum) ;
+
+uint32_t extendSign ( uint16_t signal , uint8_t signalWidth) ;
 
 void decode (instr_fetch_rsp fetched_instruction, perf_decode_if *decoder_performance, decode_if *decoded_signals , wstall_if *stalled_warps , join_if *join_inst ) ;
 
